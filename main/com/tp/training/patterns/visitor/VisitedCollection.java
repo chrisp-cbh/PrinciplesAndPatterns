@@ -3,7 +3,7 @@ package com.tp.training.patterns.visitor;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VisitedCollection {
+public class VisitedCollection implements Visited{
 	protected List<VisitedItem> _items = new ArrayList<VisitedItem>();
 	public void add(VisitedItem item){
 		_items.add(item);
@@ -13,7 +13,7 @@ public class VisitedCollection {
 	}
 	public void accept(Visitor visitor){
 		visitor.visit(this);
-		for(VisitedItem item:_items){
+		for(Visited item:_items){
 			item.accept(visitor);
 		}
 	}

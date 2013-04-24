@@ -12,4 +12,7 @@ public class CsvVisitor extends Visitor {
 		}
 		setResult(getResult() + visitedItem.getValue());
 	}
+	@Override
+	public void visit(TivertonItem visiteditem) {
+	}
 }

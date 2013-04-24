@@ -1,8 +1,5 @@
-package tp.com.training.patterns.visitor;
+package com.tp.training.patterns.visitor;
 
-import com.tp.training.patterns.visitor.VisitedCollection;
-import com.tp.training.patterns.visitor.VisitedItem;
-import com.tp.training.patterns.visitor.Visitor;
 
 public class PipeVisitor extends Visitor {
 	@Override
@@ -12,5 +9,9 @@ public class PipeVisitor extends Visitor {
 	@Override
 	public void visit(VisitedItem visitedItem) {
 		setResult(getResult()+visitedItem.getValue()+"|");
+	}
+	@Override
+	public void visit(TivertonItem visiteditem) {
+		setResult(getResult()+visiteditem.getValue()+" - from Tiverton|");
 	}
 }

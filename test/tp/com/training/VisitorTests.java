@@ -5,9 +5,9 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-import tp.com.training.patterns.visitor.PipeVisitor;
-
 import com.tp.training.patterns.visitor.CsvVisitor;
+import com.tp.training.patterns.visitor.PipeVisitor;
+import com.tp.training.patterns.visitor.TivertonItem;
 import com.tp.training.patterns.visitor.VisitedCollection;
 import com.tp.training.patterns.visitor.VisitedItem;
 
@@ -30,5 +30,18 @@ public class VisitorTests {
 		PipeVisitor pipeVisitor= new PipeVisitor();
 		visitedCollection.accept(pipeVisitor);
 		assertEquals("|david|chris|", pipeVisitor.getResult());
+	}
+	@Test
+	public void pipeVisitorReturnsPipeDelimitedResultWithTivertonItem(){
+		PipeVisitor pipeVisitor= new PipeVisitor();
+		visitedCollection.add(new TivertonItem("paul"));
+		visitedCollection.accept(pipeVisitor);
+		assertEquals("|david|chris|paul - from Tiverton|", pipeVisitor.getResult());
+	}
+	@Test
+	public void protectedItemIsVisibleInPackage(){
+		ClassWithProtectedMember cwpm = new ClassWithProtectedMember();
+		String canISeeTheProtectedItem = cwpm.protectedItem;
+		assertEquals("protected",canISeeTheProtectedItem);
 	}
 }

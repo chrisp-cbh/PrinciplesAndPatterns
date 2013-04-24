@@ -13,4 +13,6 @@ public class Visitor {
 	}
 	public void visit(VisitedItem visitedItem) {
 	}
+	public void visit(TivertonItem visiteditem){
+	}
 }

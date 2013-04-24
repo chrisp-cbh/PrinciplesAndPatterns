@@ -1,6 +1,6 @@
 package com.tp.training.patterns.visitor;
 
-public class VisitedItem {
+public class VisitedItem implements Visited {
 	private String _value;
 	public String getValue(){
 		return _value;

@@ -2,11 +2,11 @@ package com.tp.training.ocp;
 
 public class PaymentController {
 	public void makePayment(PaymentType type, double amount){
-		Payment payment = new Payment(type,amount);
-		processPayment(payment );
+		Payment payment = new Payment(amount);
+		processPayment(type,payment );
 	}
-	private void processPayment(Payment payment){
-		switch(payment.getPaymentType()){
+	private void processPayment(PaymentType type,Payment payment){
+		switch(type){
 		case CASH:
 			processCashPayment(payment);
 			break;
